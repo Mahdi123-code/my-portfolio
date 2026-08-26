@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mahdi Taheri — Web Designer and Full-Stack Developer portfolio." />
-  <title>Mahdi Taheri | Web Designer & Developer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mahdi Taheri — Front-End Developer portfolio.">
+  <title>Mahdi Taheri | Front-End Developer</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -19,221 +18,122 @@
 
   <header class="navbar-wrap">
     <nav class="navbar" aria-label="Main navigation">
-      <a class="brand" href="#home" aria-label="Mahdi home">MT</a>
+      <a class="brand" href="index.html" aria-label="Mahdi home">
+        <img class="brand-img" src="./assets/ChatGPT Image Aug 24, 2026, 09_09_42 AM.png" alt="Mahdi logo">
+      </a>
 
       <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
         <i class="bx bx-menu"></i>
       </button>
 
       <div class="nav-links" id="navLinks">
-        <a href="#home" class="active">Home</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
+        <a href="index.html" class="active">Home</a>
         <a href="#projects">Projects</a>
-        <a href="#faq">Blog</a>
+        <a href="about.html">About</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact" class="nav-contact">Contact</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <!-- HERO -->
-    <section class="hero section" id="home">
-      <div class="hero-intro reveal">
-        <span class="eyebrow">Hello</span>
-        <h1>I'm <span>Mahdi Taheri</span>, <br/> a Web Designer</h1>
-      </div>
-
-      <div class="hero-grid">
-        <div class="hero-copy reveal reveal-left">
-          <p>
-            I'm a Web Designer and Front-End Developer with a passion for
-            creating modern, responsive, and user-friendly websites.
-            Currently, I'm expanding my skills in both frontend and backend
-            development to build complete, functional web applications.
-          </p>
-          <a href="#projects" class="text-link">Explore my work <i class="bx bx-right-arrow-alt"></i></a>
+    <section class="hero" id="home">
+      <div class="hero-content reveal">
+        <div class="availability">
+          <span></span>
+          Available for work
         </div>
 
-        <div class="hero-image-wrap reveal reveal-scale">
-          <div class="hero-orb"></div>
-          <img src="./assets/profile-hero.png" alt="Mahdi Taheri" class="hero-image">
-        </div>
-
-        <div class="hero-stats reveal reveal-right">
-          <div class="stars" aria-label="Five stars">★★★★★</div>
-          <strong>10 Project</strong>
-          <span>Experience</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="services section dark-section" id="services">
-      <div class="section-heading reveal">
-        <span class="dot-title">•</span>
-        <h2>My Services</h2>
-        <p>As a digital designer, I am a visual storyteller, crafting experiences that connect deeply and spark creativity.</p>
-      </div>
-
-      <div class="service-grid">
-        <article class="service-card reveal reveal-up">
-          <div class="service-number">01</div>
-          <h3>UI / UX Designer</h3>
-          <ul>
-            <li>wireframing and prototyping</li>
-            <li>wireframing and prototyping</li>
-            <li>wireframing and prototyping</li>
-            <li>wireframing and prototyping</li>
-          </ul>
-        </article>
-
-        <article class="service-card reveal reveal-up delay-1">
-          <div class="service-number">02</div>
-          <h3>Front-End Developer</h3>
-          <ul>
-            <li>responsive web interfaces</li>
-            <li>HTML, CSS and JavaScript</li>
-            <li>React development</li>
-            <li>interactive UI components</li>
-          </ul>
-        </article>
-
-        <article class="service-card reveal reveal-up delay-2">
-          <div class="service-number">03</div>
-          <h3>Back-End Developer</h3>
-          <ul>
-            <li>REST API development</li>
-            <li>database integration</li>
-            <li>server-side applications</li>
-            <li>authentication systems</li>
-          </ul>
-        </article>
-
-        <article class="service-card reveal reveal-up delay-3">
-          <div class="service-number">04</div>
-          <h3>Full-Stack Developer</h3>
-          <ul>
-            <li>complete web applications</li>
-            <li>frontend + backend systems</li>
-            <li>MySQL database solutions</li>
-            <li>deployment and maintenance</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="about section" id="about">
-      <div class="about-content reveal reveal-left">
-        <div class="section-heading">
-          <span class="dot-title">•</span>
-          <h2>About Me</h2>
-        </div>
+        <h1>
+          Design that
+          <span>delivers results.</span>
+        </h1>
 
         <p>
-          Hi, I'm Mahdi, a Web Designer and Full-Stack Developer in progress,
-          focused on building clean, responsive, and user-friendly web
-          experiences. I work with both front-end and back-end technologies
-          to turn ideas into functional and engaging web applications.
+          Strategic design and development that brings your ideas to life.
+          I create modern, responsive websites and digital experiences
+          that make an impact.
         </p>
 
-        <div class="about-metrics">
-          <div>
-            <strong>20</strong>
-            <span>Completed Projects</span>
-          </div>
-          <div>
-            <strong>10+</strong>
-            <span>Clients on Worldwide</span>
-          </div>
-        </div>
-
-        <div class="contact-mini">
-          <span>Call Today: <b>+93 773 317 93</b></span>
-          <span>Email: <b>mahditaheri22asd@gmail.com</b></span>
-        </div>
-
-        <a href="#contact" class="outline-btn">My Story</a>
+        <a href="#contact" class="btn">
+          <span>Let's Work Together</span>
+          <i class="bx bx-phone"></i>
+        </a>
       </div>
 
-      <div class="hero-image-wrap reveal reveal-right">
-        <img src="./assets/profile-hero.png" alt="Mahdi Taheri" />
+      <div class="hero-profile reveal reveal-right">
+        <div class="profile-circle"></div>
+
+        <div class="profile-image">
+          <img src="./assets/My-photo.png" alt="Mahdi Taheri">
+        </div>
+
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+          <a href="#" class="social-link" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+          <a href="#" class="social-link" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="Facebook"><i class="bx bxl-facebook"></i></a>
+        </div>
+
+        <div class="profile-card">
+          <span class="card-dot"></span>
+          <div>
+            <strong>Front-End Developer</strong>
+            <small>UI/UX • Web Development</small>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section class="projects section" id="projects">
+    <section class="projects-section section" id="projects">
       <div class="section-heading reveal">
         <span class="dot-title">•</span>
-        <h2>Featured Projects</h2>
-        <p>These selected projects reflect my passion for blending strategy with creativity, solving real problems through thoughtful design and impactful design and impactful storytelling.</p>
+        <h2>Selected Projects</h2>
       </div>
 
       <div class="project-grid">
-        <article class="project-card reveal reveal-up">
+        <a href="project-1.html" class="project-card reveal">
           <div class="project-image">
-            <span class="project-index">01</span>
-            <img src="assets/skin-products.png" alt="Skin Products project">
+            <img src="./assets/starbucks.png" alt="Starbucks project">
           </div>
-          <h3>Skin Products</h3>
-          <p class="project-type">E-Commerce Store</p>
-          <ul>
-            <li>Figma, HTML and CSS</li>
-            <li>Figma, HTML and CSS</li>
-            <li>Figma, HTML and CSS</li>
-          </ul>
-          <a href="#" class="project-btn">View Case Study</a>
-        </article>
+          <div class="project-info">
+            <h3>Making financial data easier to understand</h3>
+            <span>Aviera · 2026</span>
+          </div>
+        </a>
 
-        <article class="project-card reveal reveal-up delay-1">
+        <a href="project-2.html" class="project-card reveal delay-1">
           <div class="project-image">
-            <span class="project-index">02</span>
-            <img src="assets/starbucks.png" alt="Starbucks clone project">
+            <img src="./assets/netlinks.png" alt="Netlinks project">
           </div>
-          <h3>Starbucks (clone)</h3>
-          <p class="project-type">Business Website</p>
-          <ul>
-            <li>HTML, CSS, JS and Bootstrap</li>
-            <li>Figma, HTML and CSS</li>
-            <li>Figma, HTML and CSS</li>
-          </ul>
-          <a href="#" class="project-btn">View Case Study</a>
-        </article>
+          <div class="project-info">
+            <h3>Creating a music discovery app</h3>
+            <span>Lumix · 2025</span>
+          </div>
+        </a>
 
-        <article class="project-card reveal reveal-up delay-2">
+        <a href="project-3.html" class="project-card reveal">
           <div class="project-image">
-            <span class="project-index">03</span>
-            <img src="assets/netlinks.png" alt="NetLinks project">
+            <img src="./assets/skin-products.png" alt="Skin products project">
           </div>
-          <h3>Netlinks</h3>
-          <p class="project-type">E-Commerce Store</p>
-          <ul>
-            <li>Figma, HTML and CSS</li>
-            <li>Figma, HTML and CSS</li>
-            <li>Figma, HTML and CSS</li>
-          </ul>
-          <a href="#" class="project-btn">View Case Study</a>
-        </article>
+          <div class="project-info">
+            <h3>Modern web application</h3>
+            <span>Web Project · 2026</span>
+          </div>
+        </a>
 
-        <article class="project-card reveal reveal-up delay-3">
+        <a href="project-4.html" class="project-card reveal delay-1">
           <div class="project-image">
-            <span class="project-index">04</span>
-            <img src="assets/mis.png" alt="Management information system project">
+            <img src="./assets/mis.png" alt="Responsive website project">
           </div>
-          <h3>MIS</h3>
-          <p class="project-type">Management System</p>
-          <ul>
-            <li>HTML, CSS, JS, React.js</li>
-            <li>Figma, HTML and CSS</li>
-            <li>Figma, HTML and CSS</li>
-          </ul>
-          <a href="#" class="project-btn">View Case Study</a>
-        </article>
+          <div class="project-info">
+            <h3>Responsive website design</h3>
+            <span>UI Design · 2026</span>
+          </div>
+        </a>
       </div>
     </section>
 
-    <!-- FAQ -->
     <section class="faq section" id="faq">
       <div class="faq-intro reveal reveal-left">
         <div class="section-heading">
@@ -241,24 +141,27 @@
           <h2>Frequently Asked Questions</h2>
         </div>
         <p>
-          Here are answers to some of the most common questions I receive as a freelance designer.
-          If you don't see your question here, feel free to reach out.
+          Here are answers to some of the most common questions I receive as a
+          freelance designer and developer.
         </p>
       </div>
 
       <div class="faq-list reveal reveal-right">
         <details open>
-          <summary>What Services do you offer? <i class="bx bx-chevron-right"></i></summary>
+          <summary>What services do you offer? <i class="bx bx-chevron-right"></i></summary>
           <p>I offer UI/UX design, responsive frontend development, backend/API development and complete web applications.</p>
         </details>
+
         <details>
           <summary>How does the design process work? <i class="bx bx-chevron-right"></i></summary>
           <p>The process starts with requirements, followed by wireframes, visual design, development, testing and refinement.</p>
         </details>
+
         <details>
           <summary>How long does a project usually take? <i class="bx bx-chevron-right"></i></summary>
-          <p>Timing depends on the scope, number of pages and required functionality. A small website can take a few days, while larger systems require more time.</p>
+          <p>Timing depends on the scope, number of pages and required functionality.</p>
         </details>
+
         <details>
           <summary>How do I get started? <i class="bx bx-chevron-right"></i></summary>
           <p>Send a message with your idea, goals and approximate requirements, and we can define the next steps.</p>
@@ -267,7 +170,6 @@
     </section>
   </main>
 
-  <!-- FOOTER / CONTACT -->
   <footer class="footer" id="contact">
     <div class="footer-inner">
       <div class="footer-copy reveal reveal-left">
@@ -289,18 +191,22 @@
 
       <form class="contact-form reveal reveal-right" id="contactForm">
         <h2>Let's Work Together!</h2>
+
         <label>
           <span class="sr-only">Your Name</span>
           <input type="text" name="name" placeholder="Your Name" required>
         </label>
+
         <label>
           <span class="sr-only">Your Email</span>
           <input type="email" name="email" placeholder="Your Email" required>
         </label>
+
         <label>
           <span class="sr-only">Describe Your Case</span>
           <textarea name="message" placeholder="Describe Your Case" required></textarea>
         </label>
+
         <button type="submit">Send Message</button>
         <p class="form-status" id="formStatus" aria-live="polite"></p>
       </form>
@@ -308,7 +214,7 @@
 
     <div class="footer-bottom">
       <span>© Copyright 2026 All Rights Reserved By Mahdi</span>
-      <span>Privacy Policy Terms</span>
+      <span>Privacy Policy · Terms</span>
     </div>
   </footer>
 

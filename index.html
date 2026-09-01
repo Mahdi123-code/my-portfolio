@@ -1,235 +1,1700 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mahdi Taheri — Front-End Developer portfolio.">
-  <meta http-scale="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
 
-  <!-- SEO Basics -->
-  <title>Your Page Title (Max 60 Characters)</title>
-  <meta name="description" content="Mahdi Taheri is a Front-End Developer and Computer Science student. Explore his portfolio showcasing modern, responsive websites and digital experiences.">
-  <meta name="keywords" content="programming, web development, front-end developer, portfolio, responsive design, UI/UX, HTML, CSS, JavaScript, Mahdi Taheri">
-  <meta name="author" content="Your Name or Company">
-  <title>Mahdi Taheri | Front-End Developer</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/x-icon" href="./assets/ChatGPT Image Aug 24, 2026, 09_09_42 AM.png" style="border-radius: 50%;">
+    <meta
+        name="description"
+        content="Mahdi Taheri — Front-End Developer and Computer Science student creating modern, responsive websites and digital experiences."
+    >
+
+    <meta
+        name="keywords"
+        content="Mahdi Taheri, Front-End Developer, Web Developer, HTML, CSS, JavaScript, PHP, Laravel, UI/UX"
+    >
+
+    <meta
+        name="author"
+        content="Mahdi Taheri"
+    >
+
+    <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+    >
+
+    <title>Mahdi Taheri | Front-End Developer</title>
+
+
+    <!-- =====================================================
+         FONTS
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         BOXICONS
+    ====================================================== -->
+
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         MAIN CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="./assets/ChatGPT Image Aug 24, 2026, 09_09_42 AM.png"
+    >
+
+
+    <!-- =====================================================
+         PREVENT THEME FLASH
+    ====================================================== -->
+
+    <script>
+
+        (() => {
+
+            const saved =
+                localStorage.getItem("theme");
+
+            const systemDark =
+                window.matchMedia &&
+                window.matchMedia(
+                    "(prefers-color-scheme: dark)"
+                ).matches;
+
+            const theme =
+                saved ||
+                (systemDark
+                    ? "dark"
+                    : "light");
+
+            document.documentElement
+                .setAttribute(
+                    "data-theme",
+                    theme
+                );
+
+        })();
+
+    </script>
+
 </head>
 
+
 <body>
-  <div class="scroll-progress" id="scrollProgress"></div>
 
-  <header class="navbar-wrap">
-    <nav class="navbar" aria-label="Main navigation">
-      <a class="brand" href="index.html" aria-label="Mahdi home">
-        <img class="brand-img" src="./assets/ChatGPT Image Aug 24, 2026, 09_09_42 AM.png" alt="Mahdi logo">
-      </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
-        <i class="bx bx-menu"></i>
-      </button>
+    <!-- =====================================================
+         WEBGL BACKGROUND
+    ====================================================== -->
 
-      <div class="nav-links" id="navLinks">
-        <a href="index.html" class="active">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="about.html">About</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact" class="nav-contact">Contact</a>
-      </div>
-    </nav>
-  </header>
+    <div
+        id="webgl-background"
+        aria-hidden="true"
+    ></div>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-content reveal">
-        <div class="availability">
-          <span></span>
-          Available for work
-        </div>
 
-        <h1>
-          Design that
-          <span>delivers results.</span>
-        </h1>
+    <!-- =====================================================
+         SITE CONTENT
+    ====================================================== -->
 
-        <p>
-          Strategic design and development that brings your ideas to life.
-          I create modern, responsive websites and digital experiences
-          that make an impact.
-        </p>
+    <div class="site-content">
 
-        <a href="#contact" class="btn">
-          <span>Let's Work Together</span>
-          <i class="bx bx-phone"></i>
-        </a>
-      </div>
 
-      <div class="hero-profile reveal reveal-right">
-        <div class="profile-circle"></div>
+        <!-- =================================================
+             SCROLL PROGRESS
+        ================================================== -->
 
-        <div class="profile-image">
-          <img src="./assets/My-photo.png" alt="Mahdi Taheri">
-        </div>
+        <div
+            class="scroll-progress"
+            id="scrollProgress"
+            aria-hidden="true"
+        ></div>
 
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/mahdi-taheri-57931b420/" class="social-link linkedin-icon" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
-          <a href="https://github.com/Mahdi123-code" class="social-link github-icon" aria-label="GitHub"><i class="bx bxl-github"></i></a>
-          <a href="https://www.instagram.com/mahdi_taheri_/" class="social-link instagram-icon" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="https://www.facebook.com/mahdi.taheri.5" class="social-link facebook-icon" aria-label="Facebook"><i class="bx bxl-facebook"></i></a>
-        </div>
 
-        <div class="profile-card">
-          <span class="card-dot"></span>
-          <div>
-            <strong>Front-End Developer</strong>
-            <small>UI/UX • Web Development</small>
-          </div>
-        </div>
-      </div>
-    </section>
+        <!-- =================================================
+             NAVBAR
+        ================================================== -->
 
-    <section class="projects-section section" id="projects">
-      <div class="section-heading reveal">
-        <span class="dot-title">•</span>
-        <h2>Selected Projects</h2>
-      </div>
+        <nav
+            class="navbar-wrap"
+            aria-label="Main navigation"
+        >
 
-      <div class="project-grid">
-        <a href="https://starbucks-clone-omega-henna.vercel.app/" class="project-card reveal">
-          <div class="project-image">
-            <img src="./assets/starbucks.png" alt="Starbucks project">
-          </div>
-          <div class="project-info">
-            <h3>Making financial data easier to understand</h3>
-            <span>Aviera · 2026</span>
-          </div>
-        </a>
+            <div class="navbar">
 
-        <a href="https://netlinks-xi.vercel.app/" class="project-card reveal delay-1">
-          <div class="project-image">
-            <img src="./assets/netlinks.png" alt="Netlinks project">
-          </div>
-          <div class="project-info">
-            <h3>Creating a music discovery app</h3>
-            <span>Lumix · 2025</span>
-          </div>
-        </a>
 
-        <a href="https://skin-products-two.vercel.app/" class="project-card reveal">
-          <div class="project-image">
-            <img src="./assets/skin-products.png" alt="Skin products project">
-          </div>
-          <div class="project-info">
-            <h3>Modern web application</h3>
-            <span>Web Project · 2026</span>
-          </div>
-        </a>
+                <!-- Logo -->
 
-        <a href="https://fanos-ms.vercel.app/" class="project-card reveal delay-1">
-          <div class="project-image">
-            <img src="./assets/mis.png" alt="Responsive website project">
-          </div>
-          <div class="project-info">
-            <h3>Responsive website design</h3>
-            <span>UI Design · 2026</span>
-          </div>
-        </a>
-      </div>
-    </section>
+                <a
+                    href="index.html"
+                    class="brand"
+                    aria-label="Mahdi Taheri home"
+                >
 
-    <section class="faq section" id="faq">
-      <div class="faq-intro reveal reveal-left">
-        <div class="section-heading">
-          <span class="dot-title">•</span>
-          <h2>Frequently Asked Questions</h2>
-        </div>
-        <p>
-          Here are answers to some of the most common questions I receive as a
-          freelance designer and developer.
-        </p>
-      </div>
+                    <img
+                        src="./assets/ChatGPT Image Aug 24, 2026, 09_09_42 AM.png"
+                        alt="Mahdi Taheri logo"
+                        class="brand-img"
+                    >
 
-      <div class="faq-list reveal reveal-right">
-        <details open>
-          <summary>What services do you offer? <i class="bx bx-chevron-right"></i></summary>
-          <p>I offer UI/UX design, responsive frontend development, backend/API development and complete web applications.</p>
-        </details>
+                </a>
 
-        <details>
-          <summary>How does the design process work? <i class="bx bx-chevron-right"></i></summary>
-          <p>The process starts with requirements, followed by wireframes, visual design, development, testing and refinement.</p>
-        </details>
 
-        <details>
-          <summary>How long does a project usually take? <i class="bx bx-chevron-right"></i></summary>
-          <p>Timing depends on the scope, number of pages and required functionality.</p>
-        </details>
+                <!-- Navigation links -->
 
-        <details>
-          <summary>How do I get started? <i class="bx bx-chevron-right"></i></summary>
-          <p>Send a message with your idea, goals and approximate requirements, and we can define the next steps.</p>
-        </details>
-      </div>
-    </section>
-  </main>
+                <div
+                    class="nav-links"
+                    id="navLinks"
+                >
 
-  <footer class="footer" id="contact">
-    <div class="footer-inner">
-      <div class="footer-copy reveal reveal-left">
-        <h2>Let's Work Together!</h2>
-        <p>Let's build something impactful together — whether it's your brand, your website, or your next big idea.</p>
+                    <a
+                        href="index.html"
+                        class="active"
+                    >
+                        Home
+                    </a>
 
-        <div class="footer-contact">
-          <span><i class="bx bx-envelope"></i> mahditaheri22asd@gmail.com</span>
-          <span><i class="bx bx-phone"></i> +9377331793</span>
-        </div>
+                    <a href="about.html">
+                        About
+                    </a>
 
-        <div class="socials social-links-footer">
-            <a href="https://www.linkedin.com/in/mahdi-taheri-57931b420/" class="social-link linkedin-icon" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
-            <a href="https://github.com/Mahdi123-code" class="social-link github-icon" aria-label="GitHub"><i class="bx bxl-github"></i></a>
-            <a href="https://www.instagram.com/mahdi_taheri_/" class="social-link instagram-icon" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
-            <a href="https://www.facebook.com/mahdi.taheri.5" class="social-link facebook-icon" aria-label="Facebook"><i class="bx bxl-facebook"></i></a>
-        </div>
-      </div>
+                    <a href="projects.html">
+                        Projects
+                    </a>
 
-      <form class="contact-form reveal reveal-right" id="contactForm">
-        <h2>Let's Work Together!</h2>
+                    <a href="#services">
+                        Services
+                    </a>
 
-        <label>
-          <span class="sr-only">Your Name</span>
-          <input type="text" name="name" placeholder="Your Name" required>
-        </label>
+                    <a href="index.html#skills">
+                        Skills
+                    </a>
 
-        <label>
-          <span class="sr-only">Your Email</span>
-          <input type="email" name="email" placeholder="Your Email" required>
-        </label>
+                    <a
+                        href="#contact"
+                        class="nav-contact"
+                    >
+                        Contact
+                    </a>
 
-        <label>
-          <span class="sr-only">Describe Your Case</span>
-          <textarea name="message" placeholder="Describe Your Case" required></textarea>
-        </label>
+                </div>
 
-        <button type="submit">Send Message</button>
-        <p class="form-status" id="formStatus" aria-live="polite"></p>
-      </form>
+
+                <!-- Right controls -->
+
+                <div class="nav-controls">
+
+
+                    <!-- Theme toggle -->
+
+                    <button
+                        class="theme-toggle"
+                        id="themeToggle"
+                        type="button"
+                        aria-label="Switch to dark mode"
+                        title="Switch theme"
+                    >
+
+                        <i
+                            class="bx bx-moon"
+                            aria-hidden="true"
+                        ></i>
+
+                    </button>
+
+
+                    <!-- Mobile menu -->
+
+                    <button
+                        class="menu-toggle"
+                        id="menuToggle"
+                        type="button"
+                        aria-label="Open menu"
+                        aria-expanded="false"
+                        aria-controls="navLinks"
+                    >
+
+                        <i
+                            class="bx bx-menu"
+                            aria-hidden="true"
+                        ></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+
+        <main>
+
+
+            <!-- =================================================
+                 HERO
+            ================================================== -->
+
+            <section
+                class="hero"
+                id="home"
+                aria-labelledby="hero-title"
+            >
+
+                <div class="hero-content reveal">
+
+
+                    <div class="availability">
+
+                        <span></span>
+
+                        Available for work
+
+                    </div>
+
+
+                    <h1 id="hero-title">
+
+                        Design that
+
+                        <span>
+                            delivers results.
+                        </span>
+
+                    </h1>
+
+
+                    <p>
+                        Strategic design and development that
+                        brings your ideas to life. I create modern,
+                        responsive websites and digital experiences
+                        that make an impact.
+                    </p>
+
+
+                    <a
+                        href="#contact"
+                        class="btn"
+                    >
+
+                        <span>
+                            Let's Work Together
+                        </span>
+
+                        <i
+                            class="bx bx-phone"
+                            aria-hidden="true"
+                        ></i>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- Hero profile -->
+
+                <div
+                    class="hero-profile reveal reveal-right"
+                >
+
+                    <div
+                        class="profile-circle"
+                        aria-hidden="true"
+                    ></div>
+
+
+                    <div class="profile-image">
+
+                        <img
+                            src="./assets/profile-hero.png"
+                            alt="Mahdi Taheri"
+                        >
+
+                    </div>
+
+
+                    <!-- Social links -->
+
+                    <div
+                        class="social-links"
+                        aria-label="Social media links"
+                    >
+
+                        <a
+                            href="https://www.linkedin.com/in/mahdi-taheri-57931b420/"
+                            class="social-link linkedin-icon"
+                            aria-label="LinkedIn"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i
+                                class="bx bxl-linkedin"
+                                aria-hidden="true"
+                            ></i>
+                        </a>
+
+
+                        <a
+                            href="https://github.com/Mahdi123-code"
+                            class="social-link github-icon"
+                            aria-label="GitHub"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i
+                                class="bx bxl-github"
+                                aria-hidden="true"
+                            ></i>
+                        </a>
+
+
+                        <a
+                            href="https://www.instagram.com/mahdi_taheri_/"
+                            class="social-link instagram-icon"
+                            aria-label="Instagram"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i
+                                class="bx bxl-instagram"
+                                aria-hidden="true"
+                            ></i>
+                        </a>
+
+
+                        <a
+                            href="https://www.facebook.com/mahdi.taheri.5"
+                            class="social-link facebook-icon"
+                            aria-label="Facebook"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i
+                                class="bx bxl-facebook"
+                                aria-hidden="true"
+                            ></i>
+                        </a>
+
+                    </div>
+
+
+                    <!-- Profile information -->
+
+                    <div class="profile-card">
+
+                        <span
+                            class="card-dot"
+                            aria-hidden="true"
+                        ></span>
+
+                        <div>
+
+                            <strong>
+                                Front-End Developer
+                            </strong>
+
+                            <small>
+                                UI/UX • Web Development
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+
+
+
+            <!-- =================================================
+                 FEATURED PROJECTS
+            ================================================== -->
+
+            <section
+                class="projects-section section"
+                id="projects"
+                aria-labelledby="projects-title"
+            >
+
+
+                <div class="projects-header reveal">
+
+                    <span class="projects-label">
+                        Selected Work
+                    </span>
+
+                    <h2 id="projects-title">
+
+                        Featured
+                        <span>
+                            Projects
+                        </span>
+
+                    </h2>
+
+                </div>
+
+
+
+                <div class="projects-grid">
+
+
+                    <!-- =========================================
+                         PROJECT 01
+                    ========================================== -->
+
+                    <article class="project-card reveal">
+
+                        <img
+                            src="assets/mis.png"
+                            alt="Eqra Library project"
+                            class="project-image"
+                            loading="lazy"
+                        >
+
+                        <div
+                            class="project-overlay"
+                            aria-hidden="true"
+                        ></div>
+
+
+                        <div class="project-top">
+
+                            <span class="project-number">
+                                01
+                            </span>
+
+                            <span class="project-category">
+                                Full Stack
+                            </span>
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <h3>
+                                Eqra Library
+                            </h3>
+
+
+                            <div class="project-details">
+
+                                <p>
+                                    A modern library management
+                                    platform designed for managing
+                                    books, members, loans and daily
+                                    library operations.
+                                </p>
+
+
+                                <div class="project-tech">
+
+                                    <span>
+                                        Laravel
+                                    </span>
+
+                                    <span>
+                                        MySQL
+                                    </span>
+
+                                    <span>
+                                        JavaScript
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <a
+                                href="projects/eqra-library.html"
+                                class="live-view"
+                            >
+
+                                <span>
+                                    Live View
+                                </span>
+
+                                <span
+                                    class="arrow"
+                                    aria-hidden="true"
+                                >
+                                    ↗
+                                </span>
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- =========================================
+                         PROJECT 02
+                    ========================================== -->
+
+                    <article class="project-card reveal">
+
+                        <img
+                            src="assets/skin-products.png"
+                            alt="Skin Products project"
+                            class="project-image"
+                            loading="lazy"
+                        >
+
+                        <div
+                            class="project-overlay"
+                            aria-hidden="true"
+                        ></div>
+
+
+                        <div class="project-top">
+
+                            <span class="project-number">
+                                02
+                            </span>
+
+                            <span class="project-category">
+                                E-Commerce
+                            </span>
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <h3>
+                                Skin Products
+                            </h3>
+
+
+                            <div class="project-details">
+
+                                <p>
+                                    A modern skincare product
+                                    website with a clean interface,
+                                    responsive layout and smooth
+                                    user experience.
+                                </p>
+
+
+                                <div class="project-tech">
+
+                                    <span>
+                                        HTML
+                                    </span>
+
+                                    <span>
+                                        CSS
+                                    </span>
+
+                                    <span>
+                                        JavaScript
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <a
+                                href="projects/skin-products.html"
+                                class="live-view"
+                            >
+
+                                <span>
+                                    Live View
+                                </span>
+
+                                <span
+                                    class="arrow"
+                                    aria-hidden="true"
+                                >
+                                    ↗
+                                </span>
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- =========================================
+                         PROJECT 03
+                    ========================================== -->
+
+                    <article class="project-card reveal">
+
+                        <img
+                            src="assets/starbucks.png"
+                            alt="Starbucks project"
+                            class="project-image"
+                            loading="lazy"
+                        >
+
+                        <div
+                            class="project-overlay"
+                            aria-hidden="true"
+                        ></div>
+
+
+                        <div class="project-top">
+
+                            <span class="project-number">
+                                03
+                            </span>
+
+                            <span class="project-category">
+                                Frontend
+                            </span>
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <h3>
+                                Starbucks
+                            </h3>
+
+
+                            <div class="project-details">
+
+                                <p>
+                                    A responsive coffee experience
+                                    focused on modern visual design,
+                                    interaction and responsive
+                                    layouts.
+                                </p>
+
+
+                                <div class="project-tech">
+
+                                    <span>
+                                        HTML
+                                    </span>
+
+                                    <span>
+                                        CSS
+                                    </span>
+
+                                    <span>
+                                        JavaScript
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <a
+                                href="projects/starbucks.html"
+                                class="live-view"
+                            >
+
+                                <span>
+                                    Live View
+                                </span>
+
+                                <span
+                                    class="arrow"
+                                    aria-hidden="true"
+                                >
+                                    ↗
+                                </span>
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- =========================================
+                         PROJECT 04
+                    ========================================== -->
+
+                    <article class="project-card reveal">
+
+                        <img
+                            src="assets/netlinks.png"
+                            alt="NETLINKS project"
+                            class="project-image"
+                            loading="lazy"
+                        >
+
+                        <div
+                            class="project-overlay"
+                            aria-hidden="true"
+                        ></div>
+
+
+                        <div class="project-top">
+
+                            <span class="project-number">
+                                04
+                            </span>
+
+                            <span class="project-category">
+                                Web Design
+                            </span>
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <h3>
+                                NETLINKS
+                            </h3>
+
+
+                            <div class="project-details">
+
+                                <p>
+                                    A professional responsive
+                                    website designed with a strong
+                                    visual hierarchy and modern
+                                    user interface.
+                                </p>
+
+
+                                <div class="project-tech">
+
+                                    <span>
+                                        HTML
+                                    </span>
+
+                                    <span>
+                                        CSS
+                                    </span>
+
+                                    <span>
+                                        Bootstrap
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <a
+                                href="projects/netlinks.html"
+                                class="live-view"
+                            >
+
+                                <span>
+                                    Live View
+                                </span>
+
+                                <span
+                                    class="arrow"
+                                    aria-hidden="true"
+                                >
+                                    ↗
+                                </span>
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+
+                <!-- All projects -->
+
+                <div class="projects-more reveal">
+
+                    <a
+                        href="projects.html"
+                        class="btn"
+                    >
+
+                        <span>
+                            View All Projects
+                        </span>
+
+                        <i
+                            class="bx bx-right-arrow-alt"
+                            aria-hidden="true"
+                        ></i>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 EXPERIENCE
+                 
+                 SVG structure is prepared for:
+                 - scroll-driven helix drawing
+                 - active experience states
+                 - line weight changes
+                 - opacity changes
+                 - card reveal animations
+                 
+                 JavaScript will control the animation later.
+            ================================================== -->
+
+            <section
+                class="experience-section section"
+                id="experience"
+                aria-labelledby="experience-title"
+            >
+
+            <div class="experience-visual">
+
+    <svg
+        class="experience-helix"
+        viewBox="0 0 120 900"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+    >
+
+        <path
+            class="helix-base"
+            d="
+                M60 0
+                C20 60 100 120 60 180
+                C20 240 100 300 60 360
+                C20 420 100 480 60 540
+                C20 600 100 660 60 720
+                C20 780 100 840 60 900
+            "
+        />
+
+        <path
+            class="helix-progress"
+            d="
+                M60 0
+                C20 60 100 120 60 180
+                C20 240 100 300 60 360
+                C20 420 100 480 60 540
+                C20 600 100 660 60 720
+                C20 780 100 840 60 900
+            "
+        />
+
+    </svg>
+
+</div>
+
+
+                <!-- Experience heading -->
+
+                <div class="experience-header reveal">
+
+                    <span class="projects-label">
+                        My Journey
+                    </span>
+
+                    <h2 id="experience-title">
+
+                        Experience &
+                        <span>
+                            Growth
+                        </span>
+
+                    </h2>
+
+                    <p>
+                        A timeline of the skills, projects and
+                        experiences that have shaped my journey
+                        as a developer.
+                    </p>
+
+                </div>
+
+
+
+                <!-- Experience timeline -->
+
+                <div
+                    class="experience-timeline"
+                    data-experience-timeline
+                >
+
+
+                    <!-- SVG HELIX -->
+
+                    <div
+                        class="experience-line"
+                        aria-hidden="true"
+                    >
+
+                        <svg
+                            viewBox="0 0 240 1600"
+                            preserveAspectRatio="none"
+                            class="experience-helix"
+                        >
+
+                            <!-- Soft glow -->
+
+                            <path
+                                class="helix-glow"
+                                d="
+                                    M120 0
+                                    C30 100 210 180 120 280
+                                    C30 380 210 460 120 560
+                                    C30 660 210 740 120 840
+                                    C30 940 210 1020 120 1120
+                                    C30 1220 210 1300 120 1400
+                                    C70 1460 80 1530 120 1600
+                                "
+                            ></path>
+
+
+                            <!-- Main line -->
+
+                            <path
+                                class="helix-main"
+                                d="
+                                    M120 0
+                                    C30 100 210 180 120 280
+                                    C30 380 210 460 120 560
+                                    C30 660 210 740 120 840
+                                    C30 940 210 1020 120 1120
+                                    C30 1220 210 1300 120 1400
+                                    C70 1460 80 1530 120 1600
+                                "
+                            ></path>
+
+                        </svg>
+
+                    </div>
+
+
+
+                    <!-- =========================================
+                         EXPERIENCE 01
+                    ========================================== -->
+
+                    <article
+                        class="experience-item experience-left reveal"
+                        data-experience="1"
+                    >
+
+                        <div class="experience-card">
+
+                            <div class="experience-card-top">
+
+                                <span class="experience-number">
+                                    01
+                                </span>
+
+                                <span class="experience-date">
+                                    2026
+                                </span>
+
+                            </div>
+
+
+                            <div class="experience-card-content">
+
+                                <span class="experience-type">
+                                    Development
+                                </span>
+
+                                <h3>
+                                    Front-End Development
+                                </h3>
+
+                                <p>
+                                    Building responsive and
+                                    interactive interfaces with
+                                    modern HTML, CSS and JavaScript.
+                                </p>
+
+                            </div>
+
+
+                            <div class="experience-tags">
+
+                                <span>
+                                    HTML
+                                </span>
+
+                                <span>
+                                    CSS
+                                </span>
+
+                                <span>
+                                    JavaScript
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- =========================================
+                         EXPERIENCE 02
+                    ========================================== -->
+
+                    <article
+                        class="experience-item experience-right reveal"
+                        data-experience="2"
+                    >
+
+                        <div class="experience-card">
+
+                            <div class="experience-card-top">
+
+                                <span class="experience-number">
+                                    02
+                                </span>
+
+                                <span class="experience-date">
+                                    2026
+                                </span>
+
+                            </div>
+
+
+                            <div class="experience-card-content">
+
+                                <span class="experience-type">
+                                    Internship
+                                </span>
+
+                                <h3>
+                                    Web Development
+                                </h3>
+
+                                <p>
+                                    Developing practical web
+                                    solutions while improving
+                                    professional development
+                                    and teamwork skills.
+                                </p>
+
+                            </div>
+
+
+                            <div class="experience-tags">
+
+                                <span>
+                                    Git
+                                </span>
+
+                                <span>
+                                    GitHub
+                                </span>
+
+                                <span>
+                                    Bootstrap
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- =========================================
+                         EXPERIENCE 03
+                    ========================================== -->
+
+                    <article
+                        class="experience-item experience-left reveal"
+                        data-experience="3"
+                    >
+
+                        <div class="experience-card">
+
+                            <div class="experience-card-top">
+
+                                <span class="experience-number">
+                                    03
+                                </span>
+
+                                <span class="experience-date">
+                                    2026
+                                </span>
+
+                            </div>
+
+
+                            <div class="experience-card-content">
+
+                                <span class="experience-type">
+                                    Full Stack
+                                </span>
+
+                                <h3>
+                                    PHP & Laravel
+                                </h3>
+
+                                <p>
+                                    Expanding from front-end
+                                    development into backend
+                                    architecture, databases and
+                                    full-stack applications.
+                                </p>
+
+                            </div>
+
+
+                            <div class="experience-tags">
+
+                                <span>
+                                    PHP
+                                </span>
+
+                                <span>
+                                    Laravel
+                                </span>
+
+                                <span>
+                                    MySQL
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- =========================================
+                         EXPERIENCE 04
+                    ========================================== -->
+
+                    <article
+                        class="experience-item experience-right reveal"
+                        data-experience="4"
+                    >
+
+                        <div class="experience-card">
+
+                            <div class="experience-card-top">
+
+                                <span class="experience-number">
+                                    04
+                                </span>
+
+                                <span class="experience-date">
+                                    Present
+                                </span>
+
+                            </div>
+
+
+                            <div class="experience-card-content">
+
+                                <span class="experience-type">
+                                    Continuous Learning
+                                </span>
+
+                                <h3>
+                                    Building Real Projects
+                                </h3>
+
+                                <p>
+                                    Continuously learning modern
+                                    technologies and applying them
+                                    through practical projects and
+                                    real-world digital experiences.
+                                </p>
+
+                            </div>
+
+
+                            <div class="experience-tags">
+
+                                <span>
+                                    UI / UX
+                                </span>
+
+                                <span>
+                                    Web
+                                </span>
+
+                                <span>
+                                    Learning
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FAQ
+            ================================================== -->
+
+            <section
+                class="faq section"
+                id="faq"
+                aria-labelledby="faq-title"
+            >
+
+                <div class="faq-intro reveal reveal-left">
+
+                    <div class="section-heading">
+
+                        <span
+                            class="dot-title"
+                            aria-hidden="true"
+                        >
+                            •
+                        </span>
+
+                        <h2 id="faq-title">
+                            Frequently Asked Questions
+                        </h2>
+
+                    </div>
+
+
+                    <p>
+                        Here are answers to some of the most
+                        common questions I receive as a freelance
+                        designer and developer.
+                    </p>
+
+                </div>
+
+
+
+                <div class="faq-list reveal reveal-right">
+
+
+                    <details open>
+
+                        <summary>
+
+                            What services do you offer?
+
+                            <i
+                                class="bx bx-chevron-right"
+                                aria-hidden="true"
+                            ></i>
+
+                        </summary>
+
+                        <p>
+                            I offer UI/UX design, responsive
+                            frontend development, backend/API
+                            development and complete web
+                            applications.
+                        </p>
+
+                    </details>
+
+
+
+                    <details>
+
+                        <summary>
+
+                            How does the design process work?
+
+                            <i
+                                class="bx bx-chevron-right"
+                                aria-hidden="true"
+                            ></i>
+
+                        </summary>
+
+                        <p>
+                            The process starts with requirements,
+                            followed by wireframes, visual design,
+                            development, testing and refinement.
+                        </p>
+
+                    </details>
+
+
+
+                    <details>
+
+                        <summary>
+
+                            How long does a project usually take?
+
+                            <i
+                                class="bx bx-chevron-right"
+                                aria-hidden="true"
+                            ></i>
+
+                        </summary>
+
+                        <p>
+                            Timing depends on the scope, number
+                            of pages and required functionality.
+                        </p>
+
+                    </details>
+
+
+
+                    <details>
+
+                        <summary>
+
+                            How do I get started?
+
+                            <i
+                                class="bx bx-chevron-right"
+                                aria-hidden="true"
+                            ></i>
+
+                        </summary>
+
+                        <p>
+                            Send a message with your idea, goals
+                            and approximate requirements, and we
+                            can define the next steps.
+                        </p>
+
+                    </details>
+
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- =====================================================
+             FOOTER / CONTACT
+        ====================================================== -->
+
+        <footer
+            class="footer"
+            id="contact"
+        >
+
+            <div class="footer-inner">
+
+
+                <!-- Footer information -->
+
+                <div class="footer-copy reveal reveal-left">
+
+                    <h2>
+                        Let's Work Together!
+                    </h2>
+
+
+                    <p>
+                        Let's build something impactful
+                        together — whether it's your brand,
+                        your website, or your next big idea.
+                    </p>
+
+
+                    <div class="footer-contact">
+
+                        <span>
+
+                            <i
+                                class="bx bx-envelope"
+                                aria-hidden="true"
+                            ></i>
+
+                            mahditaheri22asd@gmail.com
+
+                        </span>
+
+
+                        <span>
+
+                            <i
+                                class="bx bx-phone"
+                                aria-hidden="true"
+                            ></i>
+
+                            +9377331793
+
+                        </span>
+
+                    </div>
+
+
+                    <!-- Footer social links -->
+
+                    <div
+                        class="socials social-links-footer"
+                        aria-label="Social media links"
+                    >
+
+                        <a
+                            href="https://www.linkedin.com/in/mahdi-taheri-57931b420/"
+                            class="social-link linkedin-icon"
+                            aria-label="LinkedIn"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i
+                                class="bx bxl-linkedin"
+                                aria-hidden="true"
+                            ></i>
+                        </a>
+
+
+                        <a
+                            href="https://github.com/Mahdi123-code"
+                            class="social-link github-icon"
+                            aria-label="GitHub"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i
+                                class="bx bxl-github"
+                                aria-hidden="true"
+                            ></i>
+                        </a>
+
+
+                        <a
+                            href="https://www.instagram.com/mahdi_taheri_/"
+                            class="social-link instagram-icon"
+                            aria-label="Instagram"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i
+                                class="bx bxl-instagram"
+                                aria-hidden="true"
+                            ></i>
+                        </a>
+
+
+                        <a
+                            href="https://www.facebook.com/mahdi.taheri.5"
+                            class="social-link facebook-icon"
+                            aria-label="Facebook"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i
+                                class="bx bxl-facebook"
+                                aria-hidden="true"
+                            ></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Contact form -->
+
+                <form
+                    class="contact-form reveal reveal-right"
+                    id="contactForm"
+                >
+
+                    <h2>
+                        Let's Work Together!
+                    </h2>
+
+
+                    <label>
+
+                        <span class="sr-only">
+                            Your Name
+                        </span>
+
+                        <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            placeholder="Your Name"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </label>
+
+
+                    <label>
+
+                        <span class="sr-only">
+                            Your Email
+                        </span>
+
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="Your Email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </label>
+
+
+                    <label>
+
+                        <span class="sr-only">
+                            Describe Your Case
+                        </span>
+
+                        <textarea
+                            name="message"
+                            id="message"
+                            placeholder="Describe Your Case"
+                            rows="6"
+                            required
+                        ></textarea>
+
+                    </label>
+
+
+                    <button type="submit">
+                        Send Message
+                    </button>
+
+
+                    <p
+                        class="form-status"
+                        id="formStatus"
+                        aria-live="polite"
+                    ></p>
+
+                </form>
+
+            </div>
+
+
+
+            <!-- Footer bottom -->
+
+            <div class="footer-bottom">
+
+                <span>
+                    © Copyright 2026 All Rights Reserved By Mahdi
+                </span>
+
+                <span>
+                    Privacy Policy · Terms
+                </span>
+
+            </div>
+
+        </footer>
+
+
+
+        <!-- =====================================================
+             BACK TO TOP
+        ====================================================== -->
+
+        <button
+            class="back-to-top"
+            id="backToTop"
+            aria-label="Back to top"
+        >
+
+            <i
+                class="bx bx-up-arrow-alt"
+                aria-hidden="true"
+            ></i>
+
+        </button>
+
+
     </div>
 
-    <div class="footer-bottom">
-      <span>© Copyright 2026 All Rights Reserved By Mahdi</span>
-      <span>Privacy Policy · Terms</span>
-    </div>
-  </footer>
 
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">
-    <i class="bx bx-up-arrow-alt"></i>
-  </button>
 
-  <script src="script.js"></script>
+    <!-- =====================================================
+         THREE.JS
+    ====================================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.min.js"
+    ></script>
+
+
+    <!-- =====================================================
+         MAIN JAVASCRIPT
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+
 </body>
+
 </html>

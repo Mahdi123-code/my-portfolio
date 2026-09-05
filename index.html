@@ -313,21 +313,18 @@
                     </p>
 
 
-                    <a
-                        href="#contact"
-                        class="btn"
-                    >
-
-                        <span>
-                            Let's Work Together
-                        </span>
-
-                        <i
-                            class="bx bx-phone"
-                            aria-hidden="true"
-                        ></i>
-
-                    </a>
+                    <div class="hero-btns">
+                        <a href="#contact" class="btn">
+                            <span>
+                                Let's Work Together
+                            </span> <i class="bx bx-phone" aria-hidden="true"></i>
+                        </a>
+                        <a href="assets/Mahdi-Taheri-CV.pdf" download class="btn btn-secondary">
+                            <span>
+                                Download CV
+                            </span> <i class="bx bx-download" aria-hidden="true"></i>
+                        </a>
+                    </div>
 
                 </div>
 
@@ -511,7 +508,7 @@
                             </span>
 
                             <span class="project-category">
-                                Full Stack
+                                Frontend & Backend
                             </span>
 
                         </div>
@@ -535,6 +532,21 @@
 
 
                                 <div class="project-tech">
+                                    <span>
+                                        HTML
+                                    </span>
+
+                                    <span>
+                                        CSS
+                                    </span>
+
+                                    <span>
+                                        JavaScript
+                                    </span>
+
+                                    <span>
+                                        PHP
+                                    </span>
 
                                     <span>
                                         Laravel
@@ -544,17 +556,13 @@
                                         MySQL
                                     </span>
 
-                                    <span>
-                                        JavaScript
-                                    </span>
-
                                 </div>
 
                             </div>
 
 
                             <a
-                                href="projects/eqra-library.html"
+                                href="https://fanos-ms.vercel.app/"
                                 class="live-view"
                             >
 
@@ -646,7 +654,7 @@
 
 
                             <a
-                                href="projects/skin-products.html"
+                                href="https://mentors-five.vercel.app/"
                                 class="live-view"
                             >
 
@@ -738,7 +746,7 @@
 
 
                             <a
-                                href="projects/starbucks.html"
+                                href="https://starbucks-clone-omega-henna.vercel.app/"
                                 class="live-view"
                             >
 
@@ -830,7 +838,7 @@
 
 
                             <a
-                                href="projects/netlinks.html"
+                                href="https://netlinks-xi.vercel.app/"
                                 class="live-view"
                             >
 
@@ -858,7 +866,7 @@
 
                 <!-- All projects -->
 
-                <div class="projects-more reveal">
+                <div class="projects-more reveal" style="text-align: center; margin-top: 1rem;">
 
                     <a
                         href="projects.html"
@@ -882,415 +890,518 @@
 
 
 
-            <!-- =================================================
-                 EXPERIENCE
-                 
-                 SVG structure is prepared for:
-                 - scroll-driven helix drawing
-                 - active experience states
-                 - line weight changes
-                 - opacity changes
-                 - card reveal animations
-                 
-                 JavaScript will control the animation later.
-            ================================================== -->
+<section
+    class="experience-section section"
+    id="experience"
+    aria-labelledby="experience-title"
+>
 
-            <section
-                class="experience-section section"
-                id="experience"
-                aria-labelledby="experience-title"
+    <!-- =========================================
+         EXPERIENCE HEADER
+    ========================================== -->
+
+    <div class="experience-header reveal">
+
+        <div class="section-heading">
+
+            <span
+                class="dot-title"
+                aria-hidden="true"
             >
+                •
+            </span>
 
-            <div class="experience-visual">
+            <h2 id="experience-title">
+                Experience & Journey
+            </h2>
 
-    <svg
-        class="experience-helix"
-        viewBox="0 0 120 900"
-        preserveAspectRatio="none"
-        aria-hidden="true"
+        </div>
+
+        <p>
+            My journey is built around continuous
+            learning, practical projects and the
+            gradual transition from frontend
+            development toward full-stack development.
+        </p>
+
+    </div>
+
+
+    <!-- =========================================
+         EXPERIENCE TIMELINE
+    ========================================== -->
+
+    <div
+        class="experience-timeline"
+        data-experience-timeline
     >
 
-        <path
-            class="helix-base"
-            d="
-                M60 0
-                C20 60 100 120 60 180
-                C20 240 100 300 60 360
-                C20 420 100 480 60 540
-                C20 600 100 660 60 720
-                C20 780 100 840 60 900
-            "
-        />
+        <!-- =========================================
+             EXPERIENCE LINE
+        ========================================== -->
 
-        <path
-            class="helix-progress"
-            d="
-                M60 0
-                C20 60 100 120 60 180
-                C20 240 100 300 60 360
-                C20 420 100 480 60 540
-                C20 600 100 660 60 720
-                C20 780 100 840 60 900
-            "
-        />
+        <div
+            class="experience-line"
+            aria-hidden="true"
+        >
 
-    </svg>
+            <svg
+                class="experience-helix"
+                viewBox="0 0 240 1800"
+                preserveAspectRatio="none"
+            >
 
-</div>
+                <!-- Background line -->
+
+                <path
+                    class="helix-glow"
+                    d="
+                        M120 0
+
+                        C30 110
+                        210 190
+                        120 300
+
+                        C30 410
+                        210 490
+                        120 600
+
+                        C30 710
+                        210 790
+                        120 900
+
+                        C30 1010
+                        210 1090
+                        120 1200
+
+                        C30 1310
+                        210 1390
+                        120 1500
+
+                        C65 1570
+                        75 1680
+                        120 1800
+                    "
+                ></path>
 
 
-                <!-- Experience heading -->
+                <!-- Main animated line -->
 
-                <div class="experience-header reveal">
+                <path
+                    class="helix-main"
+                    d="
+                        M120 0
 
-                    <span class="projects-label">
-                        My Journey
+                        C30 110
+                        210 190
+                        120 300
+
+                        C30 410
+                        210 490
+                        120 600
+
+                        C30 710
+                        210 790
+                        120 900
+
+                        C30 1010
+                        210 1090
+                        120 1200
+
+                        C30 1310
+                        210 1390
+                        120 1500
+
+                        C65 1570
+                        75 1680
+                        120 1800
+                    "
+                ></path>
+
+
+                <!-- =================================
+                     EXPERIENCE DOTS
+                ================================== -->
+
+                <!-- Experience 01 -->
+
+                <circle
+                    class="experience-dot"
+                    data-experience-dot="1"
+                    cx="120"
+                    cy="300"
+                    r="12"
+                ></circle>
+
+
+                <!-- Experience 02 -->
+
+                <circle
+                    class="experience-dot"
+                    data-experience-dot="2"
+                    cx="120"
+                    cy="600"
+                    r="12"
+                ></circle>
+
+
+                <!-- Experience 03 -->
+
+                <circle
+                    class="experience-dot"
+                    data-experience-dot="3"
+                    cx="120"
+                    cy="900"
+                    r="12"
+                ></circle>
+
+
+                <!-- Experience 04 -->
+
+                <circle
+                    class="experience-dot"
+                    data-experience-dot="4"
+                    cx="120"
+                    cy="1200"
+                    r="12"
+                ></circle>
+
+
+                <!-- Experience 05 -->
+
+                <circle
+                    class="experience-dot"
+                    data-experience-dot="5"
+                    cx="120"
+                    cy="1500"
+                    r="12"
+                ></circle>
+
+            </svg>
+
+        </div>
+
+
+        <!-- =========================================
+             EXPERIENCE 01
+        ========================================== -->
+
+        <article
+            class="experience-item experience-left reveal"
+            data-experience="1"
+        >
+
+            <div class="experience-card">
+
+                <div class="experience-card-top">
+
+                    <span class="experience-number">
+                        01
                     </span>
 
-                    <h2 id="experience-title">
+                    <span class="experience-date">
+                        Foundation
+                    </span>
 
-                        Experience &
-                        <span>
-                            Growth
-                        </span>
+                </div>
 
-                    </h2>
+                <div class="experience-card-content">
+
+                    <span class="experience-type">
+                        Computer Science
+                    </span>
+
+                    <h3>
+                        Building the Foundation
+                    </h3>
 
                     <p>
-                        A timeline of the skills, projects and
-                        experiences that have shaped my journey
-                        as a developer.
+                        Developing a strong foundation
+                        in programming, databases,
+                        software development and
+                        information systems through
+                        Computer Science studies.
                     </p>
 
                 </div>
 
-
-
-                <!-- Experience timeline -->
-
-                <div
-                    class="experience-timeline"
-                    data-experience-timeline
-                >
-
-
-                    <!-- SVG HELIX -->
-
-                    <div
-                        class="experience-line"
-                        aria-hidden="true"
-                    >
-
-                        <svg
-                            viewBox="0 0 240 1600"
-                            preserveAspectRatio="none"
-                            class="experience-helix"
-                        >
-
-                            <!-- Soft glow -->
-
-                            <path
-                                class="helix-glow"
-                                d="
-                                    M120 0
-                                    C30 100 210 180 120 280
-                                    C30 380 210 460 120 560
-                                    C30 660 210 740 120 840
-                                    C30 940 210 1020 120 1120
-                                    C30 1220 210 1300 120 1400
-                                    C70 1460 80 1530 120 1600
-                                "
-                            ></path>
-
-
-                            <!-- Main line -->
-
-                            <path
-                                class="helix-main"
-                                d="
-                                    M120 0
-                                    C30 100 210 180 120 280
-                                    C30 380 210 460 120 560
-                                    C30 660 210 740 120 840
-                                    C30 940 210 1020 120 1120
-                                    C30 1220 210 1300 120 1400
-                                    C70 1460 80 1530 120 1600
-                                "
-                            ></path>
-
-                        </svg>
-
-                    </div>
-
-
-
-                    <!-- =========================================
-                         EXPERIENCE 01
-                    ========================================== -->
-
-                    <article
-                        class="experience-item experience-left reveal"
-                        data-experience="1"
-                    >
-
-                        <div class="experience-card">
-
-                            <div class="experience-card-top">
-
-                                <span class="experience-number">
-                                    01
-                                </span>
-
-                                <span class="experience-date">
-                                    2026
-                                </span>
-
-                            </div>
-
-
-                            <div class="experience-card-content">
-
-                                <span class="experience-type">
-                                    Development
-                                </span>
-
-                                <h3>
-                                    Front-End Development
-                                </h3>
-
-                                <p>
-                                    Building responsive and
-                                    interactive interfaces with
-                                    modern HTML, CSS and JavaScript.
-                                </p>
-
-                            </div>
-
-
-                            <div class="experience-tags">
-
-                                <span>
-                                    HTML
-                                </span>
-
-                                <span>
-                                    CSS
-                                </span>
-
-                                <span>
-                                    JavaScript
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- =========================================
-                         EXPERIENCE 02
-                    ========================================== -->
-
-                    <article
-                        class="experience-item experience-right reveal"
-                        data-experience="2"
-                    >
-
-                        <div class="experience-card">
-
-                            <div class="experience-card-top">
-
-                                <span class="experience-number">
-                                    02
-                                </span>
-
-                                <span class="experience-date">
-                                    2026
-                                </span>
-
-                            </div>
-
-
-                            <div class="experience-card-content">
-
-                                <span class="experience-type">
-                                    Internship
-                                </span>
-
-                                <h3>
-                                    Web Development
-                                </h3>
-
-                                <p>
-                                    Developing practical web
-                                    solutions while improving
-                                    professional development
-                                    and teamwork skills.
-                                </p>
-
-                            </div>
-
-
-                            <div class="experience-tags">
-
-                                <span>
-                                    Git
-                                </span>
-
-                                <span>
-                                    GitHub
-                                </span>
-
-                                <span>
-                                    Bootstrap
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- =========================================
-                         EXPERIENCE 03
-                    ========================================== -->
-
-                    <article
-                        class="experience-item experience-left reveal"
-                        data-experience="3"
-                    >
-
-                        <div class="experience-card">
-
-                            <div class="experience-card-top">
-
-                                <span class="experience-number">
-                                    03
-                                </span>
-
-                                <span class="experience-date">
-                                    2026
-                                </span>
-
-                            </div>
-
-
-                            <div class="experience-card-content">
-
-                                <span class="experience-type">
-                                    Full Stack
-                                </span>
-
-                                <h3>
-                                    PHP & Laravel
-                                </h3>
-
-                                <p>
-                                    Expanding from front-end
-                                    development into backend
-                                    architecture, databases and
-                                    full-stack applications.
-                                </p>
-
-                            </div>
-
-
-                            <div class="experience-tags">
-
-                                <span>
-                                    PHP
-                                </span>
-
-                                <span>
-                                    Laravel
-                                </span>
-
-                                <span>
-                                    MySQL
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- =========================================
-                         EXPERIENCE 04
-                    ========================================== -->
-
-                    <article
-                        class="experience-item experience-right reveal"
-                        data-experience="4"
-                    >
-
-                        <div class="experience-card">
-
-                            <div class="experience-card-top">
-
-                                <span class="experience-number">
-                                    04
-                                </span>
-
-                                <span class="experience-date">
-                                    Present
-                                </span>
-
-                            </div>
-
-
-                            <div class="experience-card-content">
-
-                                <span class="experience-type">
-                                    Continuous Learning
-                                </span>
-
-                                <h3>
-                                    Building Real Projects
-                                </h3>
-
-                                <p>
-                                    Continuously learning modern
-                                    technologies and applying them
-                                    through practical projects and
-                                    real-world digital experiences.
-                                </p>
-
-                            </div>
-
-
-                            <div class="experience-tags">
-
-                                <span>
-                                    UI / UX
-                                </span>
-
-                                <span>
-                                    Web
-                                </span>
-
-                                <span>
-                                    Learning
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
+                <div class="experience-tags">
+
+                    <span>
+                        Programming
+                    </span>
+
+                    <span>
+                        Databases
+                    </span>
+
+                    <span>
+                        IS
+                    </span>
 
                 </div>
 
-            </section>
+            </div>
+
+        </article>
 
 
+        <!-- =========================================
+             EXPERIENCE 02
+        ========================================== -->
+
+        <article
+            class="experience-item experience-right reveal"
+            data-experience="2"
+        >
+
+            <div class="experience-card">
+
+                <div class="experience-card-top">
+
+                    <span class="experience-number">
+                        02
+                    </span>
+
+                    <span class="experience-date">
+                        Front-End
+                    </span>
+
+                </div>
+
+                <div class="experience-card-content">
+
+                    <span class="experience-type">
+                        Web Development
+                    </span>
+
+                    <h3>
+                        Front-End Development
+                    </h3>
+
+                    <p>
+                        Turning ideas and designs into
+                        responsive and interactive
+                        interfaces using modern
+                        frontend technologies.
+                    </p>
+
+                </div>
+
+                <div class="experience-tags">
+
+                    <span>
+                        HTML
+                    </span>
+
+                    <span>
+                        CSS
+                    </span>
+
+                    <span>
+                        JavaScript
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- =========================================
+             EXPERIENCE 03
+        ========================================== -->
+
+        <article
+            class="experience-item experience-left reveal"
+            data-experience="3"
+        >
+
+            <div class="experience-card">
+
+                <div class="experience-card-top">
+
+                    <span class="experience-number">
+                        03
+                    </span>
+
+                    <span class="experience-date">
+                        Practical
+                    </span>
+
+                </div>
+
+                <div class="experience-card-content">
+
+                    <span class="experience-type">
+                        Real Projects
+                    </span>
+
+                    <h3>
+                        Learning Through Projects
+                    </h3>
+
+                    <p>
+                        Applying technical knowledge
+                        by building practical websites,
+                        interfaces and applications
+                        while improving design,
+                        responsiveness and usability.
+                    </p>
+
+                </div>
+
+                <div class="experience-tags">
+
+                    <span>
+                        UI / UX
+                    </span>
+
+                    <span>
+                        Git
+                    </span>
+
+                    <span>
+                        GitHub
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- =========================================
+             EXPERIENCE 04
+        ========================================== -->
+
+        <article
+            class="experience-item experience-right reveal"
+            data-experience="4"
+        >
+
+            <div class="experience-card">
+
+                <div class="experience-card-top">
+
+                    <span class="experience-number">
+                        04
+                    </span>
+
+                    <span class="experience-date">
+                        Current
+                    </span>
+
+                </div>
+
+                <div class="experience-card-content">
+
+                    <span class="experience-type">
+                        Full-Stack Direction
+                    </span>
+
+                    <h3>
+                        Expanding Beyond Front-End
+                    </h3>
+
+                    <p>
+                        Expanding my development
+                        knowledge toward backend
+                        development, databases and
+                        complete web applications.
+                    </p>
+
+                </div>
+
+                <div class="experience-tags">
+
+                    <span>
+                        PHP
+                    </span>
+
+                    <span>
+                        Laravel
+                    </span>
+
+                    <span>
+                        MySQL
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- =========================================
+             EXPERIENCE 05
+        ========================================== -->
+
+        <article
+            class="experience-item experience-left reveal"
+            data-experience="5"
+        >
+
+            <div class="experience-card">
+
+                <div class="experience-card-top">
+
+                    <span class="experience-number">
+                        05
+                    </span>
+
+                    <span class="experience-date">
+                        Ongoing
+                    </span>
+
+                </div>
+
+                <div class="experience-card-content">
+
+                    <span class="experience-type">
+                        Continuous Growth
+                    </span>
+
+                    <h3>
+                        Learning & Building
+                    </h3>
+
+                    <p>
+                        Continuously exploring new
+                        technologies, improving my
+                        development workflow and
+                        transforming new knowledge
+                        into practical projects.
+                    </p>
+
+                </div>
+
+                <div class="experience-tags">
+
+                    <span>
+                        Learning
+                    </span>
+
+                    <span>
+                        Design
+                    </span>
+
+                    <span>
+                        Development
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
 
             <!-- =================================================
                  FAQ

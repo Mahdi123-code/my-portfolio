@@ -954,170 +954,295 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* =====================================================
-       EXPERIENCE HELIX
+/* =====================================================
+   EXPERIENCE HELIX
+   Scroll-controlled progressive glowing timeline
+   ===================================================== */
+
+const experienceSection =
+    document.querySelector(".experience-section");
+
+const experienceTimeline =
+    document.querySelector(".experience-timeline");
+
+const helix =
+    document.querySelector(".helix-main");
+
+const experienceItems =
+    document.querySelectorAll(".experience-item");
+
+
+if (
+    experienceSection &&
+    experienceTimeline &&
+    helix &&
+    experienceItems.length
+) {
+
+    /* -------------------------------------------------
+       Prepare SVG path
+       ------------------------------------------------- */
+
+    const pathLength = helix.getTotalLength();
+
+    helix.style.strokeDasharray = pathLength;
+    helix.style.strokeDashoffset = pathLength;
+
+
+    /* -------------------------------------------------
+       Create dots automatically
        
-       IMPORTANT:
-       .experience-helix should be SVG
-       .helix-progress should be <path>
-    ===================================================== */
+       You DON'T need to change your existing cards.
+       JavaScript adds the dots itself.
+       ------------------------------------------------- */
 
-    const experienceSection =
-        document.querySelector(
-            ".experience-section"
-        );
+    experienceItems.forEach((item, index) => {
 
+        if (!item.querySelector(".experience-dot")) {
 
-    const helixProgress =
-        document.querySelector(
-            ".helix-progress"
-        );
+            const dot = document.createElement("span");
 
+            dot.className = "experience-dot";
 
-    const experienceItems =
-        document.querySelectorAll(
-            ".experience-item"
-        );
+            dot.setAttribute(
+                "aria-hidden",
+                "true"
+            );
 
+            item.appendChild(dot);
+        }
 
-    if (
-        experienceSection &&
-        helixProgress &&
-        typeof helixProgress.getTotalLength === "function"
-    ) {
-
-        const pathLength =
-            helixProgress.getTotalLength();
+        item.dataset.experienceIndex = index;
+    });
 
 
-        helixProgress.style.strokeDasharray =
-            `${pathLength}`;
+    const dots =
+        document.querySelectorAll(".experience-dot");
 
 
-        helixProgress.style.strokeDashoffset =
-            `${pathLength}`;
+    /* -------------------------------------------------
+       Scroll update
+       ------------------------------------------------- */
+
+    function updateExperienceHelix() {
+
+        const rect =
+            experienceSection.getBoundingClientRect();
+
+        const sectionTop =
+            window.scrollY + rect.top;
+
+        const sectionHeight =
+            experienceSection.offsetHeight;
+
+        const sectionBottom =
+            sectionTop + sectionHeight;
 
 
-        function updateHelix() {
+        /*
+         * Start the animation when the Experience
+         * section enters the viewport.
+         */
 
-            const rect =
-                experienceSection.getBoundingClientRect();
-
-
-            const sectionHeight =
-                experienceSection.offsetHeight;
-
-
-            const viewportHeight =
-                window.innerHeight;
+        const startScroll =
+            sectionTop - window.innerHeight * 0.65;
 
 
-            /*
-             * Animation starts when the
-             * experience section enters
-             * the lower part of viewport.
-             */
+        /*
+         * Finish the animation near the bottom
+         * of the Experience section.
+         *
+         * This fixes the old problem where the
+         * line finished too early.
+         */
 
-            const start =
-                viewportHeight * 0.78;
+        const endScroll =
+            sectionBottom - window.innerHeight * 0.30;
 
 
-            const distance =
-                Math.max(
-                    1,
-                    sectionHeight -
-                    viewportHeight * 0.25
+        const scrollPosition =
+            window.scrollY;
+
+
+        let progress =
+            (scrollPosition - startScroll) /
+            (endScroll - startScroll);
+
+
+        progress =
+            Math.max(
+                0,
+                Math.min(1, progress)
+            );
+
+
+        /* -------------------------------------------------
+           Draw the glowing part of the helix
+           ------------------------------------------------- */
+
+        const currentLength =
+            pathLength * progress;
+
+
+        helix.style.strokeDashoffset =
+            pathLength - currentLength;
+
+
+        /*
+         * Before entering the section:
+         * line is very dim.
+         *
+         * While scrolling:
+         * reached part becomes bright.
+         */
+
+        if (progress <= 0) {
+
+            helix.style.opacity = ".15";
+
+            helix.style.filter = "none";
+
+            helix.style.strokeWidth = "2";
+
+        } else {
+
+            helix.style.opacity =
+                String(
+                    0.25 + progress * 0.75
                 );
 
 
-            let helixProgressValue =
-                (start - rect.top) /
-                distance;
+            helix.style.filter =
+                `
+                drop-shadow(
+                    0 0 ${5 + progress * 7}px
+                    rgba(250, 110, 67, ${0.25 + progress * 0.55})
+                )
+                `;
 
 
-            helixProgressValue =
-                Math.max(
-                    0,
-                    Math.min(
-                        1,
-                        helixProgressValue
-                    )
+            helix.style.strokeWidth =
+                String(
+                    2 + progress * 1.5
                 );
-
-
-            /*
-             * Scroll DOWN
-             * → line grows
-             *
-             * Scroll UP
-             * → line shrinks
-             */
-
-            helixProgress.style.strokeDashoffset =
-                pathLength *
-                (1 - helixProgressValue);
-
-
-            /*
-             * Line becomes thicker
-             * and brighter progressively.
-             */
-
-            helixProgress.style.strokeWidth =
-                2 +
-                helixProgressValue * 3;
-
-
-            helixProgress.style.opacity =
-                0.35 +
-                helixProgressValue * 0.65;
-
-
-            /*
-             * Activate experience items
-             * progressively.
-             */
-
-            if (experienceItems.length) {
-
-                experienceItems.forEach(
-                    (item, index) => {
-
-                        const itemPoint =
-                            (index + 1) /
-                            experienceItems.length;
-
-
-                        item.classList.toggle(
-                            "is-active",
-                            helixProgressValue >=
-                            itemPoint - 0.15
-                        );
-
-                    }
-                );
-
-            }
-
         }
 
 
-        window.addEventListener(
-            "scroll",
-            updateHelix,
-            { passive: true }
+        /* -------------------------------------------------
+           Calculate which experience item is reached
+           ------------------------------------------------- */
+
+        const timelineRect =
+            experienceTimeline.getBoundingClientRect();
+
+
+        const timelineTop =
+            timelineRect.top +
+            window.scrollY;
+
+
+        experienceItems.forEach(
+            (item, index) => {
+
+                const itemRect =
+                    item.getBoundingClientRect();
+
+
+                const itemCenter =
+                    itemRect.top +
+                    window.scrollY +
+                    itemRect.height / 2;
+
+
+                /*
+                 * Convert card center into
+                 * timeline-relative position.
+                 */
+
+                const itemPosition =
+                    itemCenter - timelineTop;
+
+
+                const timelineHeight =
+                    experienceTimeline.offsetHeight;
+
+
+                const itemProgress =
+                    Math.max(
+                        0,
+                        Math.min(
+                            1,
+                            itemPosition /
+                            timelineHeight
+                        )
+                    );
+
+
+                /*
+                 * Activate the card when the
+                 * scrolling line reaches it.
+                 */
+
+                if (
+                    progress >= itemProgress - 0.035
+                ) {
+
+                    item.classList.add(
+                        "is-active"
+                    );
+
+                } else {
+
+                    item.classList.remove(
+                        "is-active"
+                    );
+                }
+            }
         );
-
-
-        window.addEventListener(
-            "resize",
-            updateHelix
-        );
-
-
-        updateHelix();
-
     }
+
+
+    /* -------------------------------------------------
+       Scroll listener
+       ------------------------------------------------- */
+
+    let ticking = false;
+
+    function requestExperienceUpdate() {
+
+        if (!ticking) {
+
+            window.requestAnimationFrame(() => {
+
+                updateExperienceHelix();
+
+                ticking = false;
+            });
+
+            ticking = true;
+        }
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        requestExperienceUpdate,
+        { passive: true }
+    );
+
+
+    window.addEventListener(
+        "resize",
+        updateExperienceHelix
+    );
+
+
+    /*
+     * Initial state
+     */
+
+    updateExperienceHelix();
+}
 
 
     /* =====================================================

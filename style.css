@@ -606,11 +606,7 @@ main {
 
     left: 50%;
 
-    width:
-        min(
-            calc(100% - 48px),
-            850px
-        );
+    max-width: 540px;
 
     transform:
         translateX(-50%);
@@ -627,7 +623,7 @@ main {
 
     align-items: center;
 
-    padding: 7px 9px;
+    padding: 7px 10px;
 
     border:
         1px solid var(--border);
@@ -698,7 +694,7 @@ main {
 
     align-items: center;
 
-    gap: clamp(16px, 2.5vw, 34px);
+    gap: 22px;
 
     margin-left: auto;
 
@@ -1131,6 +1127,21 @@ main {
 
     transform:
         rotate(45deg);
+}
+
+.btn-secondary {
+
+    background:
+        var(--transparent);
+
+    color:
+        var(--primary);
+    border:
+        1px solid var(--primary);
+}
+
+.btn-secondary:hover i{
+    transform: none;
 }
 
 
@@ -2595,188 +2606,114 @@ main {
 
 
 /* =========================================================
-   18. EXPERIENCE & JOURNEY
-========================================================= */
-
-.experience-section {
-
-    position: relative;
-
-    overflow: hidden;
-}
-
-
-.experience-header {
-
-    max-width: 720px;
-
-    margin-bottom: 55px;
-}
-
-
-.experience-header > p {
-
-    margin-top: 16px;
-
-    color:
-        var(--text-secondary);
-
-    font-size: 14px;
-
-    line-height: 1.8;
-}
-
-
-/* Timeline */
+   EXPERIENCE TIMELINE
+   ========================================================= */
 
 .experience-timeline {
-
     position: relative;
-
     min-height: 1500px;
-
-    padding:
-        10px
-        0
-        50px;
+    padding: 10px 0 50px;
 }
 
 
-/* SVG helix */
+/* =========================================================
+   HELIX CONTAINER
+   ========================================================= */
 
 .experience-line {
-
     position: absolute;
-
     top: 0;
-
     bottom: 0;
-
     left: 50%;
-
     width: 240px;
-
-    transform:
-        translateX(-50%);
-
+    transform: translateX(-50%);
     pointer-events: none;
-
-    opacity: .7;
+    z-index: 1;
 }
 
 
+/* SVG */
 .experience-helix {
-
     width: 100%;
-
     height: 100%;
-
     overflow: visible;
 }
 
 
-/* Background path */
+/* =========================================================
+   BASE HELIX
+   Dim by default
+   ========================================================= */
 
 .helix-glow {
-
     fill: none;
-
-    stroke:
-        var(--border-strong);
-
+    stroke: var(--border-strong);
     stroke-width: 3;
-
     stroke-linecap: round;
-
-    opacity: .45;
-}
-
-
-/* Main animated path */
-
-.helix-main {
-
-    fill: none;
-
-    stroke:
-        var(--primary);
-
-    stroke-width: 2;
-
-    stroke-linecap: round;
-
-    filter:
-        drop-shadow(
-            0 0 8px
-            rgba(250, 110, 67, .45)
-        );
-
-    stroke-dasharray:
-        2500;
-
-    stroke-dashoffset:
-        2500;
-
-    transition:
-        stroke-width .4s ease,
-        opacity .4s ease;
+    opacity: .25;
 }
 
 
 /*
-   script.js will control:
-   --helix-progress
-   or strokeDashoffset
+   IMPORTANT:
+   The main line is NOT glowing initially.
+   JavaScript controls the glowing/progress part.
 */
 
+.helix-main {
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 2;
+    stroke-linecap: round;
 
-.experience-item {
+    /* No permanent glow */
+    filter: none;
 
-    position: relative;
+    /* JS controls these */
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
 
-    width: 45%;
+    opacity: .18;
 
-    margin-bottom: 90px;
-
-    z-index: 2;
+    transition:
+        stroke-width .18s ease,
+        opacity .18s ease,
+        filter .18s ease;
 }
 
 
-.experience-left {
+/* =========================================================
+   EXPERIENCE ITEMS
+   ========================================================= */
 
+.experience-item {
+    position: relative;
+    width: 45%;
+    margin-bottom: 90px;
+    z-index: 3;
+}
+
+.experience-left {
     margin-right: auto;
 }
 
-
 .experience-right {
-
     margin-left: auto;
 }
 
 
-/* Card */
+/* =========================================================
+   EXPERIENCE CARD
+   ========================================================= */
 
 .experience-card {
-
     position: relative;
-
-    padding:
-        26px;
-
-    border:
-        1px solid var(--border);
-
-    border-radius:
-        var(--radius-lg);
-
-    background:
-        var(--surface);
-
-    box-shadow:
-        var(--shadow-sm);
-
-    backdrop-filter:
-        blur(16px);
+    padding: 26px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(16px);
 
     transition:
         transform .5s cubic-bezier(.2, .8, .2, 1),
@@ -2784,146 +2721,198 @@ main {
         box-shadow .4s ease;
 }
 
-
 .experience-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary-border);
+    box-shadow: var(--shadow-accent);
+}
 
-    transform:
-        translateY(-6px);
 
-    border-color:
-        var(--primary-border);
+/* =========================================================
+   CARD ACTIVE STATE
+   Activated by JavaScript when the timeline reaches it
+   ========================================================= */
+
+.experience-item.is-active .experience-card {
+    border-color: var(--primary-border);
 
     box-shadow:
-        var(--shadow-accent);
+        0 0 0 1px rgba(250, 110, 67, .08),
+        0 10px 35px rgba(250, 110, 67, .12);
 }
 
 
-.experience-card-top {
+/* =========================================================
+   EXPERIENCE DOT
+   ========================================================= */
 
-    display: flex;
+.experience-dot {
+    position: absolute;
 
-    align-items: center;
+    width: 18px;
+    height: 18px;
 
-    justify-content: space-between;
+    top: 50%;
 
-    padding-bottom: 18px;
+    transform: translate(-50%, -50%);
 
-    border-bottom:
-        1px solid var(--border-light);
+    border-radius: 50%;
+
+    background: var(--surface);
+
+    border: 2px solid var(--border-strong);
+
+    box-shadow:
+        0 0 0 5px var(--surface);
+
+    z-index: 10;
+
+    opacity: .45;
+
+    transition:
+        width .3s ease,
+        height .3s ease,
+        background .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease,
+        opacity .3s ease;
 }
 
 
-.experience-number {
-
-    color:
-        var(--primary);
-
-    font-family:
-        var(--font-mono);
-
-    font-size: 13px;
+/* LEFT CARD → dot toward center */
+.experience-left .experience-dot {
+    right: -9px;
 }
 
 
-.experience-date {
-
-    color:
-        var(--text-muted);
-
-    font-family:
-        var(--font-mono);
-
-    font-size: 9px;
-
-    text-transform: uppercase;
+/* RIGHT CARD → dot toward center */
+.experience-right .experience-dot {
+    left: -9px;
 }
 
 
-.experience-card-content {
+/* =========================================================
+   ACTIVE DOT
+   ========================================================= */
 
-    padding-top: 22px;
+.experience-item.is-active .experience-dot {
+    width: 24px;
+    height: 24px;
+
+    background: var(--primary);
+
+    border-color: var(--primary);
+
+    opacity: 1;
+
+    box-shadow:
+        0 0 0 5px var(--surface),
+        0 0 12px var(--primary),
+        0 0 28px rgba(250, 110, 67, .75);
 }
 
 
-.experience-type {
+/* =========================================================
+   CONNECTOR
+   The line pointing from card toward the helix
+   ========================================================= */
 
-    color:
-        var(--primary);
+.experience-item::before {
+    content: "";
 
-    font-family:
-        var(--font-mono);
+    position: absolute;
+    top: 50%;
 
-    font-size: 9px;
+    width: calc(5.5vw + 10px);
+    height: 1px;
 
-    letter-spacing: .08em;
-
-    text-transform: uppercase;
-}
-
-
-.experience-card h3 {
-
-    margin-top: 9px;
-
-    font-size:
-        clamp(
-            22px,
-            2.5vw,
-            32px
+    background:
+        linear-gradient(
+            90deg,
+            var(--border),
+            var(--border-strong)
         );
 
-    line-height: 1.05;
+    opacity: .35;
 
-    letter-spacing:
-        -.04em;
+    transition:
+        background .3s ease,
+        opacity .3s ease,
+        box-shadow .3s ease;
 }
 
+
+/* Left card connector */
+.experience-left::before {
+    right: calc(-5.5vw - 10px);
+}
+
+
+/* Right card connector */
+.experience-right::before {
+    left: calc(-5.5vw - 10px);
+}
+
+
+/* Active connector */
+.experience-item.is-active::before {
+    opacity: 1;
+
+    background: var(--primary);
+
+    box-shadow:
+        0 0 6px rgba(250, 110, 67, .55);
+}
+
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
+
+.experience-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.experience-number {
+    font-weight: 700;
+}
+
+.experience-date {
+    font-size: .9rem;
+    opacity: .7;
+}
+
+.experience-card-content {
+    margin-top: 18px;
+}
+
+.experience-type {
+    font-size: .8rem;
+    margin-bottom: 7px;
+}
+
+.experience-card h3 {
+    margin-bottom: 10px;
+}
 
 .experience-card p {
-
-    margin-top: 14px;
-
-    color:
-        var(--text-secondary);
-
-    font-size: 11px;
-
-    line-height: 1.8;
+    line-height: 1.7;
 }
-
 
 .experience-tags {
-
     display: flex;
-
     flex-wrap: wrap;
-
-    gap: 6px;
-
-    margin-top: 20px;
+    gap: 8px;
+    margin-top: 18px;
 }
-
 
 .experience-tags span {
-
-    padding:
-        6px 9px;
-
-    border:
-        1px solid var(--border);
-
-    border-radius:
-        var(--radius-pill);
-
-    color:
-        var(--text-muted);
-
-    font-family:
-        var(--font-mono);
-
-    font-size: 8px;
+    padding: 5px 10px;
+    border-radius: 999px;
 }
-
 
 /* =========================================================
    19. SKILLS
@@ -4026,8 +4015,7 @@ details p {
 
     border-radius: 50%;
 
-    color:
-        rgba(255, 255, 255, .7);
+    color: #080909;
 
     transition:
         transform .3s ease,
@@ -4868,40 +4856,61 @@ details p {
 
     /* Experience */
 
+    /* =========================================================
+   MOBILE EXPERIENCE TIMELINE
+========================================================= */
+
     .experience-timeline {
-
         min-height: auto;
-
         padding-left: 30px;
     }
 
-
     .experience-line {
-
         left: -10px;
-
         width: 100px;
-
         transform: none;
-
-        opacity: .5;
+        opacity: .6;
     }
 
-
     .experience-item {
-
         width: 100%;
-
         margin-bottom: 45px;
     }
 
-
     .experience-left,
     .experience-right {
-
         margin-left: 0;
-
         margin-right: 0;
+    }
+
+    .experience-card {
+        padding: 21px;
+    }
+
+
+    /* Mobile dots */
+
+    .experience-left .experience-dot,
+    .experience-right .experience-dot {
+        left: -39px;
+        right: auto;
+    }
+
+
+    /* Mobile connector */
+
+    .experience-item::before {
+        left: -30px !important;
+        right: auto !important;
+        width: 30px;
+    }
+
+
+    /* Smaller active dot */
+
+    .experience-item.is-active .experience-dot {
+        width: 21px;
+        height: 21px;
     }
 
 

@@ -606,7 +606,7 @@ main {
 
     left: 50%;
 
-    max-width: 540px;
+    max-width: 560px;
 
     transform:
         translateX(-50%);
@@ -622,6 +622,7 @@ main {
     display: flex;
 
     align-items: center;
+    justify-content: space-between;
 
     padding: 7px 10px;
 
@@ -696,7 +697,7 @@ main {
 
     gap: 22px;
 
-    margin-left: auto;
+    margin-left: 16px;
 
     margin-right: 10px;
 
@@ -1459,7 +1460,7 @@ main {
 
     position: absolute;
 
-    left: 0;
+    left: 30px;
 
     bottom: 35px;
 
@@ -3061,6 +3062,12 @@ main {
 
 .bxl-react {
     color: #4ca8d8;
+}
+
+.bxl-figma{
+    background: linear-gradient(45deg, #f24e1e, #a259ff, #ff7262, #1abcfe, #0acf83);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .bxl-nodejs {
